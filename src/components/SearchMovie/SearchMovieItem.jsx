@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import PropTypes from 'prop-types';
 
 const SearchMovieItem = ({items}) => {
+    console.log(items)
 
     const location = useLocation();
 
@@ -20,7 +21,11 @@ const SearchMovieItem = ({items}) => {
 };
 
 SearchMovieItem.propTypes = {
-    items: PropTypes.arrayOf((PropTypes.object).isRequired)
+    items: PropTypes.arrayOf(PropTypes.shape({
+        title: PropTypes.string,
+        name: PropTypes.string,
+        id: PropTypes.number.isRequired
+    }))
 };
 
 export default SearchMovieItem;
