@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const SearchMovieItem = ({items}) => {
 
@@ -16,6 +17,10 @@ const SearchMovieItem = ({items}) => {
             {elements}
         </ul>
     )
+};
+
+SearchMovieItem.propTypes = {
+    items: PropTypes.arrayOf((PropTypes.object).isRequired)
 };
 
 export default SearchMovieItem;
